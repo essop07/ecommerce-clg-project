@@ -1,0 +1,40 @@
+/* Custom styles for Cure Pharmacy / E-commerce Website */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.navbar-brand h1 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    min-height: 48px;
+}
+
+footer {
+    background-color: #dc3545;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+.form-control:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+table.table th, table.table td {
+    vertical-align: middle;
+}
