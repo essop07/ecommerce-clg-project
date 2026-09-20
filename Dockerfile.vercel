@@ -1,10 +1,12 @@
-FROM dunglas/frankenphp:php8.3-alpine
+FROM dunglas/frankenphp:1-php8.4-alpine
 
 WORKDIR /app
 
+RUN install-php-extensions mysqli
+
 COPY . /app
 
-ENV SERVER_NAME=:80
+ENV PORT=80
 
 EXPOSE 80
 
