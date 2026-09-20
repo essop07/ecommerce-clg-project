@@ -2,7 +2,7 @@
 
 $host = "sql313.infinityfree.com";
 $user = "if0_42963174";
-$password = "YOUR_NEW_PASSWORD";
+$password = "Motala10";
 $database = "if0_42963174_ecommerce";
 
 $con = mysqli_connect($host, $user, $password, $database);
