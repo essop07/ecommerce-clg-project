@@ -1,4 +1,3 @@
 <?php
-header("Location: user/Home.php");
-exit;
+include 'Home.php';
 ?>
