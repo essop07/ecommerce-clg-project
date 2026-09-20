@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include '../product/config.php';
+require __DIR__ . '/../product/config.php';
 ?>
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
