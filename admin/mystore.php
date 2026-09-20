@@ -1,9 +1,13 @@
 <?php
 session_start();
-if (!$_SESSION["admin"]) {
+
+// Redirect anyone who isn't logged in as admin
+if (empty($_SESSION["admin"])) {
     header("Location: form/log-in.php");
     exit();
 }
+
+$adminName = htmlspecialchars($_SESSION["admin"], ENT_QUOTES, 'UTF-8');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +39,7 @@ if (!$_SESSION["admin"]) {
   <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <span class="font-serif text-xl font-semibold text-white">MyStore <span class="text-amber-500 font-sans text-xs font-medium align-middle ml-1">ADMIN</span></span>
     <div class="flex items-center gap-5 text-sm text-stone-300">
-      <span><i class="fa-solid fa-user-tie mr-1.5 text-amber-500"></i>Hello, <span class="text-white"><?php echo $_SESSION["admin"]; ?></span></span>
+      <span><i class="fa-solid fa-user-tie mr-1.5 text-amber-500"></i>Hello, <span class="text-white"><?= $adminName ?></span></span>
       <a href="../user/Home.php" class="hover:text-white transition-colors">User-Panel</a>
       <a href="log-out.php" class="hover:text-white transition-colors"><i class="fa-solid fa-right-from-bracket mr-1"></i>Log-Out</a>
     </div>
@@ -45,10 +49,10 @@ if (!$_SESSION["admin"]) {
 <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
   <h2 class="font-serif text-3xl text-stone-900 text-center mb-10">Dashboard</h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
     <a href="../product/index.php" class="bg-white border border-stone-200 rounded-sm p-6 text-center hover:border-stone-900 hover:shadow-md transition-all">
       <i class="fa-solid fa-plus text-amber-700 text-xl mb-3"></i>
-      <p class="font-serif text-lg text-stone-900">Add Post</p>
+      <p class="font-serif text-lg text-stone-900">Add Product</p>
       <p class="text-sm text-stone-500 mt-1">Create a new product listing</p>
     </a>
     <a href="user.php" class="bg-white border border-stone-200 rounded-sm p-6 text-center hover:border-stone-900 hover:shadow-md transition-all">
@@ -61,16 +65,15 @@ if (!$_SESSION["admin"]) {
       <p class="font-serif text-lg text-stone-900">Orders</p>
       <p class="text-sm text-stone-500 mt-1">Review incoming orders</p>
     </a>
-     <a href="../product/viewproduct.php" class="bg-white border border-stone-200 rounded-sm p-6 text-center hover:border-stone-900 hover:shadow-md transition-all">
-      <i class="fa-solid fa-receipt text-amber-700 text-xl mb-3"></i>
-      <p class="font-serif text-lg text-stone-900">Product</p>
-      <p class="text-sm text-stone-500 mt-1">View Product</p>
+    <a href="../product/viewproduct.php" class="bg-white border border-stone-200 rounded-sm p-6 text-center hover:border-stone-900 hover:shadow-md transition-all">
+      <i class="fa-solid fa-box text-amber-700 text-xl mb-3"></i>
+      <p class="font-serif text-lg text-stone-900">Products</p>
+      <p class="text-sm text-stone-500 mt-1">View all products</p>
     </a>
   </div>
 </main>
 
+<?php include __DIR__ . '/../user/footer.php'; ?>
+
 </body>
 </html>
-<?php
-include '../user/footer.php';
-?>
