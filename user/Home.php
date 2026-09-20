@@ -18,49 +18,35 @@ if (!$record) {
 
 while ($row = mysqli_fetch_array($record)) {
 
-    $check_page = $row['Pcategory'];
-
-    if ($check_page === "Home") {
+    if ($row['Pcategory'] === "Home") {
 
         echo "
         <form action='Insertcart.php' method='POST'
             class='flex flex-col bg-white border border-stone-200 rounded-sm overflow-hidden hover:shadow-md transition-shadow duration-200'>
 
             <img
-                src='../product/$row[Pimage]'
+                src='../product/{$row['Pimage']}'
                 class='w-full h-56 object-cover'
-                alt='$row[Pname]'>
+                alt='{$row['Pname']}'>
 
             <div class='p-4 flex flex-col flex-1'>
 
                 <h5 class='font-serif text-lg text-stone-900 mb-1'>
-                    $row[Pname]
+                    {$row['Pname']}
                 </h5>
 
                 <p class='text-stone-600 font-medium mb-3'>
-                    Rs. $row[Pprice]
+                    Rs. {$row['Pprice']}
                 </p>
 
-                <input
-                    type='hidden'
-                    name='Pname'
-                    value='$row[Pname]'>
-
-                <input
-                    type='hidden'
-                    name='Pprice'
-                    value='$row[Pprice]'>
-
-                <input
-                    type='hidden'
-                    name='realquantity'
-                    value='$row[Pquantity]'>
+                <input type='hidden' name='Pname' value='{$row['Pname']}'>
+                <input type='hidden' name='Pprice' value='{$row['Pprice']}'>
+                <input type='hidden' name='realquantity' value='{$row['Pquantity']}'>
 
                 <input
                     type='number'
                     name='Pquantity'
                     class='w-full border border-stone-300 rounded-sm px-3 py-2 text-center mb-3 focus:outline-none focus:ring-1 focus:ring-stone-900'
-                    value=''
                     min='1'
                     max='20'
                     placeholder='Enter Quantity'
