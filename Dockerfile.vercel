@@ -1,0 +1,9 @@
+FROM dunglas/frankenphp:php8.3-alpine
+
+WORKDIR /app
+
+COPY . /app
+
+ENV SERVER_NAME=:80
+
+EXPOSE 80
