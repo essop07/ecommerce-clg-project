@@ -12,7 +12,7 @@ if ($isLocal) {
     // InfinityFree
     $host     = "sql313.infinityfree.com";
     $user     = "if0_42963174";
-    $password = "MOTALA10"; // <- paste it here (click the eye icon to reveal it)
+    $password = "Motala10"; // <- paste it here (click the eye icon to reveal it)
     $database = "if0_42963174_ecommerce";
 }
 
