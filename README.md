@@ -1,4 +1,4 @@
-# Ecommerce Website (Cure Pharmacy Internship Report Project)
+# Ecommerce Website
 
 Reconstructed from the code and screenshots in the submitted internship report
 (Microsys Softtech Limited).
